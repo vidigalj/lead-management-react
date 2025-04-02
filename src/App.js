@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import InvitedLeads from './components/InvitedLeads/InvitedLeads';
+import AcceptedLeads from './components/AcceptedLeads/AcceptedLeads';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [activeTab, setActiveTab] = useState('invited');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+    <div className="tabs">
+      <button
+        className={`tab-button ${activeTab === 'invited' ? 'active' : ''}`}
+        onClick={() => setActiveTab('invited')}
+      >
+        Invited
+      </button>
+      <button
+        className={`tab-button ${activeTab === 'accepted' ? 'active' : ''}`}
+        onClick={() => setActiveTab('accepted')}
+      >
+        Accepted
+      </button>
     </div>
+    <div className="tab-content">
+      {activeTab === 'invited' && <InvitedLeads />}
+      {activeTab === 'accepted' && <AcceptedLeads />}
+    </div>
+  </div>
   );
-}
+};
 
 export default App;
