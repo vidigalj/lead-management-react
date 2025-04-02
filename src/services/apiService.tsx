@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_BASE_URL = 'https://localhost:5001/api';
 
 const getLeadsByStatus = async (status) => {
-  const response = await axios.get(`${API_BASE_URL}/Leads/${status}`);
+  const response = await axios.get(`${API_BASE_URL}/leads/${status}`);
   return response.data;
 };
 

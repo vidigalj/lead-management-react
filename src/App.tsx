@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import InvitedLeads from './components/InvitedLeads/InvitedLeads';
-import AcceptedLeads from './components/AcceptedLeads/AcceptedLeads';
+import InvitedLeads from './components/InvitedLeads/InvitedLeads.tsx';
+import AcceptedLeads from './components/AcceptedLeads/AcceptedLeads.tsx';
 import './App.css';
 
 const App = () => {
